@@ -49,7 +49,7 @@ resource "aws_sns_topic" "this" {
 ################################################################################
 
 data "aws_iam_policy_document" "this" {
-  count = var.create && var.create_topic_policy ? 1 : 0
+  count = var.create && var.create_topic_policy_document ? 1 : 0
 
   source_policy_documents   = var.source_topic_policy_documents
   override_policy_documents = var.override_topic_policy_documents
@@ -133,7 +133,7 @@ resource "aws_sns_topic_policy" "this" {
   count = var.create && var.create_topic_policy ? 1 : 0
 
   arn    = aws_sns_topic.this[0].arn
-  policy = data.aws_iam_policy_document.this[0].json
+  policy = coalesce(var.aws_sns_topic_policy, try(data.aws_iam_policy_document.this[0].json, ""))
 }
 
 ################################################################################

@@ -144,6 +144,18 @@ variable "create_topic_policy" {
   default     = true
 }
 
+variable "create_topic_policy_document" {
+  description = "Determines whether an SNS topic policy document is created"
+  type        = bool
+  default     = true
+}
+
+variable "aws_sns_topic_policy" {
+  description = "SNS topic policy"
+  type        = string
+  default     = ""
+}
+
 variable "source_topic_policy_documents" {
   description = "List of IAM policy documents that are merged together into the exported document. Statements must have unique `sid`s"
   type        = list(string)
