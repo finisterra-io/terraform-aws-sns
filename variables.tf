@@ -205,3 +205,105 @@ variable "data_protection_policy" {
   type        = string
   default     = null
 }
+
+
+
+
+
+
+
+
+
+
+
+variable "application_failure_feedback_role_arn" {
+  description = "The IAM role permitted to receive failure feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "application_success_feedback_role_arn" {
+  description = "The IAM role permitted to receive success feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "application_success_feedback_sample_rate" {
+  description = "The percentage of success to sample (0-100)"
+  type        = number
+  default     = null
+}
+
+variable "firehose_failure_feedback_role_arn" {
+  description = "The IAM role permitted to receive failure feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "firehose_success_feedback_role_arn" {
+  description = "The IAM role permitted to receive success feedback for this topic"
+  type        = string
+  default     = null
+}
+
+
+
+variable "firehose_success_feedback_sample_rate" {
+  description = "The percentage of success to sample (0-100)"
+  type        = number
+  default     = null
+}
+
+variable "http_failure_feedback_role_arn" {
+  description = "The IAM role permitted to receive failure feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "http_success_feedback_role_arn" {
+  description = "The IAM role permitted to receive success feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "http_success_feedback_sample_rate" {
+  description = "The percentage of success to sample (0-100)"
+  type        = number
+  default     = null
+}
+
+variable "lambda_failure_feedback_role_arn" {
+  description = "The IAM role permitted to receive failure feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "lambda_success_feedback_role_arn" {
+  description = "The IAM role permitted to receive success feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "lambda_success_feedback_sample_rate" {
+  description = "The percentage of success to sample (0-100)"
+  type        = number
+  default     = null
+}
+
+variable "sqs_failure_feedback_role_arn" {
+  description = "The IAM role permitted to receive failure feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "sqs_success_feedback_role_arn" {
+  description = "The IAM role permitted to receive success feedback for this topic"
+  type        = string
+  default     = null
+}
+
+variable "sqs_success_feedback_sample_rate" {
+  description = "The percentage of success to sample (0-100)"
+  type        = number
+  default     = null
+}

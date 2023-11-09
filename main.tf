@@ -10,9 +10,9 @@ resource "aws_sns_topic" "this" {
   name        = var.use_name_prefix ? null : var.name
   name_prefix = var.use_name_prefix ? var.name : null
 
-  application_failure_feedback_role_arn    = try(var.application_feedback.failure_role_arn, null)
-  application_success_feedback_role_arn    = try(var.application_feedback.success_role_arn, null)
-  application_success_feedback_sample_rate = try(var.application_feedback.success_sample_rate, null)
+  application_failure_feedback_role_arn    = try(var.application_failure_feedback_role_arn, null)
+  application_success_feedback_role_arn    = try(var.application_success_feedback_role_arn, null)
+  application_success_feedback_sample_rate = try(var.application_success_feedback_sample_rate, null)
 
   content_based_deduplication = var.content_based_deduplication
   delivery_policy             = var.delivery_policy
@@ -21,25 +21,25 @@ resource "aws_sns_topic" "this" {
   signature_version           = var.fifo_topic ? null : var.signature_version
   tracing_config              = var.tracing_config
 
-  firehose_failure_feedback_role_arn    = try(var.firehose_feedback.failure_role_arn, null)
-  firehose_success_feedback_role_arn    = try(var.firehose_feedback.success_role_arn, null)
-  firehose_success_feedback_sample_rate = try(var.firehose_feedback.success_sample_rate, null)
+  firehose_failure_feedback_role_arn    = try(var.firehose_failure_feedback_role_arn, null)
+  firehose_success_feedback_role_arn    = try(var.firehose_success_feedback_role_arn, null)
+  firehose_success_feedback_sample_rate = try(var.firehose_success_feedback_sample_rate, null)
 
-  http_failure_feedback_role_arn    = try(var.http_feedback.failure_role_arn, null)
-  http_success_feedback_role_arn    = try(var.http_feedback.success_role_arn, null)
-  http_success_feedback_sample_rate = try(var.http_feedback.success_sample_rate, null)
+  http_failure_feedback_role_arn    = try(var.http_failure_feedback_role_arn, null)
+  http_success_feedback_role_arn    = try(var.http_success_feedback_role_arn, null)
+  http_success_feedback_sample_rate = try(var.http_success_feedback_sample_rate, null)
 
   kms_master_key_id = var.kms_master_key_id
 
-  lambda_failure_feedback_role_arn    = try(var.lambda_feedback.failure_role_arn, null)
-  lambda_success_feedback_role_arn    = try(var.lambda_feedback.success_role_arn, null)
-  lambda_success_feedback_sample_rate = try(var.lambda_feedback.success_sample_rate, null)
+  lambda_failure_feedback_role_arn    = try(var.lambda_failure_feedback_role_arn, null)
+  lambda_success_feedback_role_arn    = try(var.lambda_success_feedback_role_arn, null)
+  lambda_success_feedback_sample_rate = try(var.lambda_success_feedback_sample_rate, null)
 
   policy = var.create_topic_policy ? null : var.topic_policy
 
-  sqs_failure_feedback_role_arn    = try(var.sqs_feedback.failure_role_arn, null)
-  sqs_success_feedback_role_arn    = try(var.sqs_feedback.success_role_arn, null)
-  sqs_success_feedback_sample_rate = try(var.sqs_feedback.success_sample_rate, null)
+  sqs_failure_feedback_role_arn    = try(var.sqs_failure_feedback_role_arn, null)
+  sqs_success_feedback_role_arn    = try(var.sqs_success_feedback_role_arn, null)
+  sqs_success_feedback_sample_rate = try(var.sqs_success_feedback_sample_rate, null)
 
   tags = var.tags
 }
