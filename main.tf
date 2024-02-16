@@ -65,6 +65,13 @@ resource "aws_sns_topic_subscription" "this" {
   redrive_policy                  = try(each.value.redrive_policy, null)
   subscription_role_arn           = try(each.value.subscription_role_arn, null)
   topic_arn                       = aws_sns_topic.this[0].arn
+
+  lifecycle {
+    ignore_changes = [
+      confirmation_timeout_in_minutes,
+      endpoint_auto_confirms,
+    ]
+  }
 }
 
 ################################################################################
