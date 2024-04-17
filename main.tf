@@ -37,6 +37,8 @@ resource "aws_sns_topic" "this" {
   sqs_success_feedback_role_arn    = try(var.sqs_success_feedback_role_arn, null)
   sqs_success_feedback_sample_rate = try(var.sqs_success_feedback_sample_rate, null)
 
+  archive_policy = var.archive_policy
+
   tags = var.tags
 }
 
