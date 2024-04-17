@@ -191,3 +191,10 @@ variable "sqs_success_feedback_sample_rate" {
   type        = number
   default     = null
 }
+
+
+variable "archive_policy" {
+  description = "The SNS archive policy"
+  type        = string
+  default     = null
+}
